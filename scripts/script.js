@@ -92,12 +92,12 @@ var MatchGame = {
 			return array;
 		};
 
-		// Place Images Randomly in the game boxes
-		$gameBoxes.each(function(index, element) {
+		// Place Images in the game boxes
+		$gameBoxes.each(function(index) {
 		
 		var $this = $(this);
 		
-		$('<img>').attr('src', animalImages[index]).appendTo($this).hide();;
+		$('<img>').attr('src', animalImages[index]).appendTo($this).hide();
 			
 		});
 		

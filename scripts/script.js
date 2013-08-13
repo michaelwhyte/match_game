@@ -1,6 +1,6 @@
 // JavaScript Document
 
-// Select all the game boxes
+// Global Variables
 var $btnPlayAndReset = $('.btn_play_and_reset');
 var $gameBoard = $('.game_board');
 var $gameBoxes = $('.col');

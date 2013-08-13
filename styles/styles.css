@@ -1,0 +1,237 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Michael Whyte Resets */
+
+main {
+	display: block;
+}
+
+* {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;	
+}
+
+/* End CSS Reset */
+
+/* Body Styles */
+
+body {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;	
+}
+
+/* End Body Styles */
+
+/* Typography */
+
+h1 {
+	font-weight: bold;
+	font-size: 2rem;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;	
+}
+
+/* End Typography */
+
+/* Header Styles */
+
+header,
+footer {
+	width: 782px;
+	margin: 0 auto;
+	position: relative;	
+}
+
+.output_turns,
+.output_matched {
+	position: absolute;
+	width: 180px;
+	padding: 15px;
+	border: 1px solid #000;
+	top: 31px;	
+}
+
+.output_turns {
+	left: 30px;	
+}
+
+.output_matched {
+	right: 30px;	
+}
+
+.output_turns h2,
+.output_matched h2 {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1rem;
+	margin-bottom: 15px;	
+}
+
+.output_turns p,
+.output_matched p {
+	text-align: center;
+	font-size: 1.8rem;	
+}
+
+/* End Header Styles */
+
+/* Game Board Styles */
+
+.no_game_board {
+	display: none;	
+}
+
+.game_board {
+	width: 782px;
+	margin: 0 auto;
+	border: 1px solid #000000;	
+}
+
+.row {
+	height: 131px;
+	border-top: 1px solid #000000;	
+}
+
+.row_01 {
+	border-top: none;
+	height: 130px;	
+}
+
+.row_01 .col:nth-of-type(odd),
+.row_03 .col:nth-of-type(odd),
+.row_05 .col:nth-of-type(odd) {
+	background-color: #00a651;	
+}
+
+.row_01 .col:nth-of-type(even),
+.row_03 .col:nth-of-type(even),
+.row_05 .col:nth-of-type(even) {
+	background-color: #acd373;	
+}
+
+.row_02 .col:nth-of-type(odd),
+.row_04 .col:nth-of-type(odd),
+.row_06 .col:nth-of-type(odd) {
+	background-color: #acd373;
+}
+
+.row_02 .col:nth-of-type(even),
+.row_04 .col:nth-of-type(even),
+.row_06 .col:nth-of-type(even) {
+	background-color: #00a651;
+}
+
+.col {
+	width: 130px;
+	height: 130px;
+	border-left: 1px solid #000000;
+	float: left;	
+}
+
+.col_01 {
+	border-left: none;	
+}
+
+.col img {
+	margin: 15px;	
+}
+
+
+
+/* End Game Board Styles */
+
+/* Footer Styles */
+
+.no_footer {
+	display: none;	
+}
+
+footer {
+	padding: 30px;
+	overflow: auto;	
+}
+
+footer h2 {
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 15px;	
+}
+
+footer ul {
+	float: left;
+	width: 220px;
+	margin-left: 30px;		
+}
+
+footer ul:nth-of-type(1) {
+	margin-left: 0;
+}
+
+footer ul li {
+	line-height: 1.5;	
+}
+
+/* General Styles */
+
+.btn_play_and_reset {
+	width: 170px;
+	display: block;
+	margin: 0 auto;	
+	margin-bottom: 30px;
+}
+
+/* End General Styles */
+

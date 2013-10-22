@@ -1,6 +1,6 @@
 // JavaScript Document
 
-// Global Variables
+// Select all the game boxes
 var $btnPlayAndReset = $('.btn_play_and_reset');
 var $gameBoard = $('.game_board');
 var $gameBoxes = $('.col');
@@ -92,12 +92,12 @@ var MatchGame = {
 			return array;
 		};
 
-		// Place Images in the game boxes
-		$gameBoxes.each(function(index) {
+		// Place Images Randomly in the game boxes
+		$gameBoxes.each(function(index, element) {
 		
 		var $this = $(this);
 		
-		$('<img>').attr('src', animalImages[index]).appendTo($this).hide();
+		$('<img>').attr('src', animalImages[index]).appendTo($this).hide();;
 			
 		});
 		
@@ -143,7 +143,6 @@ var MatchGame = {
 					counterTurn++;
 					$outputTurnsP.text(counterTurn);
 					counterClick = 0;
-					//alert('hello');		
 				}, 750);
 			  };
 			};

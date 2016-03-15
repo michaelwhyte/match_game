@@ -13,7 +13,6 @@ var counterMatched = 0;
 var currentImage;
 var previousImage;
 
-
 // Click Handler for initializing Game
 $btnPlayAndReset.click(function(){
 

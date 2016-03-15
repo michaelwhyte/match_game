@@ -90,14 +90,14 @@ var MatchGame = {
 				array[j] = temp;
 			}
 			return array;
-		};
+		}
 
 		// Place Images Randomly in the game boxes
-		$gameBoxes.each(function(index, element) {
+		$gameBoxes.each(function(index) {
 		
 		var $this = $(this);
 		
-		$('<img>').attr('src', animalImages[index]).appendTo($this).hide();;
+		$('<img>').attr('src', animalImages[index]).appendTo($this).hide();
 			
 		});
 		
@@ -120,7 +120,7 @@ var MatchGame = {
 				$('img[src="' + currentImage + '"]').removeClass('selected')
 													.addClass('matched');
 				$this.css('background-color' , 'transparent');
-				$this.children('img').show()
+				$this.children('img').show();
 				counterTurn++;
 				$outputTurnsP.text(counterTurn);
 				counterMatched++;
@@ -144,26 +144,15 @@ var MatchGame = {
 					$outputTurnsP.text(counterTurn);
 					counterClick = 0;
 				}, 750);
-			  };
-			};
+			  }
+			}
 		  }else{
 			  counterClick = 0;	
-		  };
+		  }
 		}else{
 			counterClick = 1;	
-		};
+		}
 			
 	}// end MatchGame.gameTurn()	
 
 };// End MatchGame object
-
-
-
-
-
-
-
-
-
-
-

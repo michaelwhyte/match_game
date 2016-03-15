@@ -1,4 +1,4 @@
-match_game
+Match Game
 ==========
 
 HTML/CSS/JS Match game

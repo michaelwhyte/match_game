@@ -230,7 +230,7 @@ var mg = new MatchGame($('.game_board'),
 	                   'images/animal_image_');
 
 // Cheat code
-mg.matches = mg.halfNumBoxes - 1;
+// mg.matches = mg.halfNumBoxes - 1;
 
 // Game Event Handlers
 mg.btnPlay.click(function(){

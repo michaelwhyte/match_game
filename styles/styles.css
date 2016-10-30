@@ -99,6 +99,7 @@ footer {
 .output_matched {
 	position: absolute;
 	width: 180px;
+	height: 107px;
 	padding: 15px;
 	border: 1px solid #000;
 	top: 31px;	
@@ -140,6 +141,10 @@ footer {
 	border: 1px solid #000000;	
 }
 
+.no-transition * {
+	transition: none !important;	
+}
+
 .row {
 	height: 131px;
 	border-top: 1px solid #000000;	
@@ -150,39 +155,75 @@ footer {
 	height: 130px;	
 }
 
-.row_01 .col:nth-of-type(odd),
-.row_03 .col:nth-of-type(odd),
-.row_05 .col:nth-of-type(odd) {
-	background-color: #00a651;	
-}
 
-.row_01 .col:nth-of-type(even),
-.row_03 .col:nth-of-type(even),
-.row_05 .col:nth-of-type(even) {
-	background-color: #acd373;	
-}
-
-.row_02 .col:nth-of-type(odd),
-.row_04 .col:nth-of-type(odd),
-.row_06 .col:nth-of-type(odd) {
-	background-color: #acd373;
-}
-
-.row_02 .col:nth-of-type(even),
-.row_04 .col:nth-of-type(even),
-.row_06 .col:nth-of-type(even) {
-	background-color: #00a651;
-}
 
 .col {
 	width: 130px;
 	height: 130px;
 	border-left: 1px solid #000000;
-	float: left;	
+	float: left;
+	perspective: 1000px;	
 }
 
 .col_01 {
 	border-left: none;	
+}
+
+.row_01 .col:nth-of-type(odd) .box-front,
+.row_03 .col:nth-of-type(odd) .box-front,
+.row_05 .col:nth-of-type(odd) .box-front,
+.row_02 .col:nth-of-type(even) .box-front,
+.row_04 .col:nth-of-type(even) .box-front,
+.row_06 .col:nth-of-type(even) .box-front,
+.row_01 .col:nth-of-type(odd) .box-back,
+.row_03 .col:nth-of-type(odd) .box-back,
+.row_05 .col:nth-of-type(odd) .box-back,
+.row_02 .col:nth-of-type(even) .box-back,
+.row_04 .col:nth-of-type(even) .box-back,
+.row_06 .col:nth-of-type(even) .box-back {
+	background-color: #00a651;	
+}
+
+.row_01 .col:nth-of-type(even) .box-front,
+.row_03 .col:nth-of-type(even) .box-front,
+.row_05 .col:nth-of-type(even) .box-front,
+.row_02 .col:nth-of-type(odd) .box-front,
+.row_04 .col:nth-of-type(odd) .box-front,
+.row_06 .col:nth-of-type(odd) .box-front,
+.row_01 .col:nth-of-type(even) .box-back,
+.row_03 .col:nth-of-type(even) .box-back,
+.row_05 .col:nth-of-type(even) .box-back,
+.row_02 .col:nth-of-type(odd) .box-back,
+.row_04 .col:nth-of-type(odd) .box-back,
+.row_06 .col:nth-of-type(odd) .box-back {
+	background-color: #acd373;	
+}
+
+.box {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: all 0.6s ease;
+}
+
+.box-front,
+.box-back {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.box-back {
+	transform: rotateY(180deg);
+}
+
+.col.flipped .box {
+	transform: rotateY(-180deg);
 }
 
 .col img {
@@ -230,7 +271,7 @@ footer ul li {
 	width: 170px;
 	display: block;
 	margin: 0 auto;	
-	margin-bottom: 30px;
+	margin-bottom: 45px;
 }
 
 /* End General Styles */

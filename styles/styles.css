@@ -141,10 +141,6 @@ footer {
 	border: 1px solid #000000;	
 }
 
-.no-transition * {
-	transition: none !important;	
-}
-
 .row {
 	height: 131px;
 	border-top: 1px solid #000000;	

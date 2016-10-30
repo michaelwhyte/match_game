@@ -38,13 +38,18 @@ MatchGame.prototype.gameStart = function(){
 
 };
 
-MatchGame.prototype.gameEnd = function(){
+MatchGame.prototype.gameEnd = function(isGameWon){
 
-	this.gameBoard.addClass('no_game_board')
-	              .addClass('no-transition');
+	this.gameBoard.addClass('no_game_board');
 	this.btnPlay.text('Click to Play Game');
-	this.boxes.removeClass('flipped')
-	          .removeClass('matched');
+	
+	if(isGameWon === false){
+		
+		this.boxes.removeClass('flipped')
+	              .removeClass('matched');
+	
+	}
+	
 	this.clickCounter = 0;
 	this.turns = 0;
 	this.matches = 0;
@@ -53,15 +58,6 @@ MatchGame.prototype.gameEnd = function(){
 	this.destroyPictures();
 
 };
-
-MatchGame.prototype.gameReset = function(){
-	
-	//var that = this;
-	
-	this.gameEnd();
-	this.gameStart();
-		
-}; // end gameReset
 
 MatchGame.prototype.createPictures = function(){
 
@@ -134,10 +130,6 @@ MatchGame.prototype.gameTurn = function(box){
 	// Get a reference to this...
 	var that = this;
 	
-	if(this.gameBoard.hasClass('no-transition')){
-		this.gameBoard.removeClass('no-transition');
-	}
-
 	if(box.hasClass('flipped')){
 		
 		return;
@@ -164,8 +156,6 @@ MatchGame.prototype.gameTurn = function(box){
 		this.secondFlippedPicture = box.find('.box-back img').attr('src');
 
 	}	
-
-	console.log(this.secondFlippedPicture + ' ' + this.firstFlippedPicture);
 
 	if(this.firstFlippedPicture === this.secondFlippedPicture){
 		// they match
@@ -215,10 +205,20 @@ MatchGame.prototype.gameWon = function(){
 	var answer = confirm('You Matched them all...Click OK to play again?');
 
 	if(answer === true){
-		this.gameReset();
-	}
 
-};
+		var that = this;
+		
+		this.boxes.removeClass('flipped')
+		          .removeClass('matched')
+				  .one('transitionend', function(){
+					  that.gameEnd(true);
+					  that.gameStart();
+					  that.boxes.off('transitionend');
+				   });
+		
+	} // end if answer is true
+
+}; // end gameWon
 
 
 var mg = new MatchGame($('.game_board'), 
@@ -238,7 +238,7 @@ mg.btnPlay.click(function(){
 	if($(this).text() === 'Click to Play Game'){
 		mg.gameStart();
 	}else{
-		mg.gameEnd();
+		mg.gameEnd(false);
 	}
 
 });

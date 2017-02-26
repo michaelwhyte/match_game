@@ -224,7 +224,7 @@ class MatchGame {
 	
 } // end Game Class
 
-// Game Functions
+// Create instance of the MatchGame class
 const mg = new MatchGame($('.game_board'), 
 	                     $('.col'), 
 	                     $('.col').length, 

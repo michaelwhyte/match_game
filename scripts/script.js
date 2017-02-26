@@ -32,9 +32,9 @@ class MatchGame {
 	gameStart(){
 
 		this.btnPlay.text('Click to End Game');
-		this.createPictures();
+		this.createPictures(this.picFilename);
 		this.shufflePictures();
-		this.addPictures(this.pictures);	
+		this.addPictures(this.pictures, this.boxes);	
 		this.gameBoard.removeClass('no_game_board');
 
 	} // end gameStart
@@ -60,19 +60,19 @@ class MatchGame {
 
 	} // end gameEnd
 	
-	createPictures(){
+	createPictures(picFilename){
 
 		for(let i = 1; i <= this.halfNumBoxes; i++){
 			if(i < 10){			
 				// for images 01 - 09
 				// .push() inserts an image into the array..
-				this.pictures.push(this.picFilename + '0' + i + '.jpg');
-				this.pictures.push(this.picFilename + '0' + i + '.jpg');
+				this.pictures.push(picFilename + '0' + i + '.jpg');
+				this.pictures.push(picFilename + '0' + i + '.jpg');
 
 			}else{
 				// for images 10 - 18
-				this.pictures.push(this.picFilename + i + '.jpg');
-				this.pictures.push(this.picFilename + i + '.jpg');
+				this.pictures.push(picFilename + i + '.jpg');
+				this.pictures.push(picFilename + i + '.jpg');
 
 			} // end if (i < 10)	
 		} // end for loop
@@ -103,9 +103,9 @@ class MatchGame {
 
 	} // end shufflePictures
 
-	addPictures(thePictures){
+	addPictures(thePictures, theBoxes){
 
-		this.boxes.each(function(i){
+		theBoxes.each(function(i){
 
 			// create image
 			const $theImg = $('<img>').attr('src', thePictures[i]);
